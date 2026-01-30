@@ -12,8 +12,6 @@ import com.o7solutions.android_2_months.databinding.ActivityBottomNavigationBind
 
 class BottomNavigationActivity : AppCompatActivity() {
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_bottom_navigation)
