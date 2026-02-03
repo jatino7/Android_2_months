@@ -3,13 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@id/navigation_home">
-
-    <fragment
-        android:id="@+id/navigation_home"
-        android:name="com.o7solutions.android_2_months.BottomNavigation.ui.home.HomeFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+    app:startDestination="@id/homeFragment">
 
     <fragment
         android:id="@+id/navigation_notifications"
@@ -21,4 +15,9 @@
         android:name="com.o7solutions.android_2_months.BottomNavigation.ui.dashboard.DashboardFragment"
         android:label="fragment_dashboard"
         tools:layout="@layout/fragment_dashboard" />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.o7solutions.android_2_months.BottomNavigation.ui.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
 </navigation>

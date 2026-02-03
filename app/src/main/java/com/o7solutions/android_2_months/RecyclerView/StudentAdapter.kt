@@ -13,7 +13,7 @@ class StudentAdapter(
     var onClick: OnItemClickListener
 ): RecyclerView.Adapter<StudentAdapter.StudentViewHolder>() {
 
-    override fun onCreateViewHolder(
+        override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
     ): StudentViewHolder {
@@ -66,4 +66,6 @@ class StudentAdapter(
         fun onTextViewClick(position: Int)
 
     }
+
+
 }

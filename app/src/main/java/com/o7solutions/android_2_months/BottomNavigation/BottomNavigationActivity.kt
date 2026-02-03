@@ -4,11 +4,8 @@ import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.o7solutions.android_2_months.R
-import com.o7solutions.android_2_months.databinding.ActivityBottomNavigationBinding
 
 class BottomNavigationActivity : AppCompatActivity() {
 
@@ -18,6 +15,8 @@ class BottomNavigationActivity : AppCompatActivity() {
 
         val navView: BottomNavigationView = findViewById<BottomNavigationView>(R.id.nav_view)
         val navController = findNavController(R.id.nav_host_fragment_activity_bottom_navigation)
+
+//
         navView.setupWithNavController(navController)
     }
 }
