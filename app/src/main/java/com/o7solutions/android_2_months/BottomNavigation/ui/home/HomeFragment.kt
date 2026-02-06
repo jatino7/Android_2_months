@@ -12,8 +12,14 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.google.android.material.datepicker.MaterialDatePicker
+import com.google.android.material.timepicker.MaterialTimePicker
+import com.google.android.material.timepicker.TimeFormat
 import com.o7solutions.android_2_months.R
 import com.o7solutions.android_2_months.databinding.FragmentHomeBinding
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
 class HomeFragment : Fragment() {
 
@@ -33,29 +39,47 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
-        val dialog = BottomSheetDialog(requireContext())
 
-        val view = layoutInflater.inflate(R.layout.bottom_sheet_layout,null)
+        binding.datePicker.setOnClickListener {
+            val datePicker = MaterialDatePicker.Builder.datePicker()
+                .setTitleText("Select Title")
+                .setSelection(MaterialDatePicker.todayInUtcMilliseconds())
+                .build()
 
-        view.findViewById<Button>(R.id.submitBtn).setOnClickListener {
-            var name = view.findViewById<EditText>(R.id.nameET)
-            var age = view.findViewById<EditText>(R.id.ageET)
+            datePicker.show(parentFragmentManager,"DATE_PICKER")
+            datePicker.addOnPositiveButtonClickListener { selection->
 
-            if(name.text.toString().isEmpty()) {
-                name.error = "Please fill name"
-            } else if(age.text.toString().isEmpty()) {
-                age.error = "Please fill age"
-            } else {
-                Toast.makeText(requireContext(), "Submitted", Toast.LENGTH_SHORT).show()
-                dialog.dismiss()
+
+                val dateString = SimpleDateFormat("dd/MMM/yyyy", Locale.getDefault()).format(Date(selection))
+
+                Toast.makeText(requireContext(), dateString, Toast.LENGTH_SHORT).show()
+
             }
         }
 
-        view.findViewById<Button>(R.id.closeBtn).setOnClickListener {
-            dialog.dismiss()
+        binding.timePicker.setOnClickListener {
+            val timePicker = MaterialTimePicker.Builder()
+                .setTitleText("Select Time")
+                .setTimeFormat(TimeFormat.CLOCK_24H)
+                .setHour(12)
+                .setMinute(0)
+                .build()
+
+            timePicker.show(parentFragmentManager,"TIME_PICKER")
+
+            timePicker.addOnPositiveButtonClickListener {
+                val pickedHour = timePicker.hour
+                val pickedMinute = timePicker.minute
+
+
+                Toast.makeText(requireContext(), "$pickedHour: $pickedMinute ", Toast.LENGTH_SHORT).show()
+            }
+
+
         }
 
-        dialog.setContentView(view)
-        dialog.show()
-    }
+
+
+//
+        }
 }
