@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "184592533488",
+    "project_id": "android2month",
+    "storage_bucket": "android2month.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:184592533488:android:9022d6feb43bf225853f35",
+        "android_client_info": {
+          "package_name": "com.o7solutions.android_2_months"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCydFYRIwmq00E9O3w-8008uW86H_6drsI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
