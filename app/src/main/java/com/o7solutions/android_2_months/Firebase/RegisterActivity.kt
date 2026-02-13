@@ -42,24 +42,17 @@ class RegisterActivity : AppCompatActivity() {
             }  else if(password.isEmpty()) {
                 Toast.makeText(this, "Please fill password", Toast.LENGTH_SHORT).show()
             } else {
-
-
                 auth.createUserWithEmailAndPassword(email,password)
                     .addOnSuccessListener {
                         Toast.makeText(this, "Account created successfully!", Toast.LENGTH_SHORT).show()
-
                         val intent = Intent(this, BottomNavigationActivity::class.java)
                         startActivity(intent)
                         finish()
                     }
                     .addOnFailureListener { e ->
-
                         Toast.makeText(this, e.localizedMessage, Toast.LENGTH_SHORT).show()
-
                     }
             }
-
-
         }
     }
 }
